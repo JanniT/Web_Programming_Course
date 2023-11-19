@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  //- p #{title}
+
+  //- Creating the wanted structure
+  input(type="text", id="input-name", placeholder='Name') 
+  br
+  br
+  input(type='text', id='input-task', placeholder='Write task') 
+  br
+  br
+  button(type='button', id='submit-data') Add Task
+  br
+  p(id="current-status") 
+  br
+  br
+  input(type="text", id="search-name", placeholder="Search a name")
+  br 
+  br
+  button(type="button", id="search") Search
+  p(id="searchName")
+  p(id="searchTodos")
+  br
+  button(type="button", id="delete-user", style="display:none;") Delete user
