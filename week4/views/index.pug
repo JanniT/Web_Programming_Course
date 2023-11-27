@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  nav
+    div(class="nav-wrapper")
+      h1= title
+      ul(id="nav-mobile" class="right hide-on-med-and-down")
+
+  div(class="container")
+    div(class='col')
+      h1(id='recipeName')
+      p(id='recipeInd')
+      p(id='recipeInst')
+
+    div(class='col')
+      input(type="text", id="name-text", placeholder='Name of the recipe')
+      h4 Ingredients
+      textarea(id="ingredients-text", placeholder='Add ingredient')
+
+      button(id="add-ingredient", type="button", class="btn") Add ingredient
+      h4 Instructions 
+      textarea(id="instructions-text", placeholder='Add instruction')
+
+      button(id="add-instruction", type="button", class="btn") Add instruction
+      br
+      br
+      input(type="file", id="image-input", accept="image/png, image/jpeg", multiple)
+      br
+      br
+      button(id="submit", type="submit", class='btn') Submit
