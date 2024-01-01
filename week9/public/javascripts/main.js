@@ -10,8 +10,6 @@ async function main() {
             const email = document.getElementById("email").value
             const password = document.getElementById("password").value
     
-            // AW339.yj4
-    
             const response = await fetch("/api/user/register/", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
