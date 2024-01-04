@@ -1,4 +1,22 @@
+//- Checked how the hypelinks work: https://pugjs.org/language/attributes.html
 extends layout
 
 block content
   h1= "Main page"
+
+  div(id='containerAll')
+    div(id='loggedOutContainer')
+      a(class='btn', href='/register.html') Register
+      br
+      a(class='btn', href='/login.html') Login
+
+    div(id='loggedInContainer', style='display: none')
+      p(id='email')
+      //- button(id="logout", class="btn") Logout 
+
+      input(type='text', id='add-item', placeholder='Add a todo')
+      div(id='todoContainer')
+        h3 Todos:
+        ul(id='todos')
+    div(id='errorContainer')
+  script(src="/javascripts/mainpage.js")
