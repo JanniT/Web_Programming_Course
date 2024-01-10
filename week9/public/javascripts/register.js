@@ -1,5 +1,4 @@
 // I used this in help with redirecting the user to the login html: https://stackoverflow.com/questions/72586590/how-can-i-redirect-to-login-page-after-registration-in-this-code
-
 async function main() {
     const registerForm = document.getElementById("registrationForm")
 
@@ -20,14 +19,27 @@ async function main() {
                 const responseData = await response.json()
                 console.log("Registration successful: ", responseData)
 
-                console.log("Redirecting to /login.html")
                 //redirecting the user to the login page after registration
                 window.location.href = '/login.html'
             } else {
+                const errorData = await response.json()
                 console.error('Failed to register ', response.status, response.statusText)
+                displayErrorMessage(errorData.message)
             }
         })
     }   
+}
+
+function displayErrorMessage(message){
+    const errorContainer = document.getElementById("errorContainer")
+    
+    errorContainer.innerHTML = ""
+    
+    const errorMessage = document.createElement("p")
+    errorMessage.textContent = message
+    errorMessage.style.color = "red"
+    
+    errorContainer.appendChild(errorMessage)
 }
 
 document.addEventListener("DOMContentLoaded", main)
