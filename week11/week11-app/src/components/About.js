@@ -7,7 +7,7 @@ function About() {
   let [userData, setUserData] = useState([])
 
   useEffect(() => {
-
+    let mounted = true
     // fetching the data from the api
     const fetchData = async () => {
       try {

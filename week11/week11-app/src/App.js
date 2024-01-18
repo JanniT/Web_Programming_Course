@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom'
 import Header from './components/Header'
 import MyContainer from './components/MyContainer'
 import About from './components/About'
+import React from 'react'
+import './i18n'
 
 function App() {
   return (
